@@ -6,6 +6,7 @@ class AgentsController < ApplicationController
   end
 
   def show
+    @agent = Agent.find(params[:id])
   end
 
   def edit
