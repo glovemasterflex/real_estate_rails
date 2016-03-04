@@ -1,0 +1,29 @@
+<h1>Address</h1>
+<hr />
+<br />
+
+<% if @address %>
+  <ul>
+    <li>Street: <%= @address.street %> </li>
+    <li>City: <%= @address.city %> </li>
+    <li>State: <%= @address.state %> </li>
+    <li>Zip: <%=@address.zip %> </li>
+  </ul>
+  <br />
+  <%= link_to 'Edit', edit_agent_home_address_path(@agent, @home, @address)%>
+  <br />
+  <%= link_to 'Delete', angent_home_address_path(@agent, @home, @address), method: :delete %>
+
+  <hr />
+<% else %>
+  <h3>No address for this home</h3>
+  <br />
+  <%= link_to 'Add Address', new_agent_home_address_path(@agent, @home) %>
+<% end %>
+
+<ul>
+  <%=link_to 'Back to Front Page', agents_path %>
+  <%= link_to 'Back to listings by this agent', agent_path(@agent)%>
+  <%= link_to 'Back to this listing', agent_home_path(@agent, @home)%>
+
+</ul>
