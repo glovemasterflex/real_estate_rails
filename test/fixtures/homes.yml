@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bed: 
+  bath: 
+  sqft: 
+  price: 
+  sold: false
+  like: false
+
+two:
+  bed: 
+  bath: 
+  sqft: 
+  price: 
+  sold: false
+  like: false
