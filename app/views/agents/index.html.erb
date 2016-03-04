@@ -1,2 +1,13 @@
-<h1>Agents#index</h1>
-<p>Find me in app/views/agents/index.html.erb</p>
+<h1>Welcome to Our Real Estate Agency</h1>
+  <% @agents.each do |agent| %>
+    <ul>    
+      <li><%= link_to "#{agent.name}", agent_path(agent[:id]) %></li>
+        <ul>
+          <li><%= agent.phone %></li>
+          <li><%= agent.email %></li>
+        </ul>
+      </ul>
+
+    <% end %>
+<br />
+<%= link_to 'Create New Agent', new_agent_path %>
