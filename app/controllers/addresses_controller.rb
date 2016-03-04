@@ -1,10 +1,12 @@
 class AddressesController < ApplicationController
+
   before_action :a_agent
   before_action :b_home
   before_action :c_address, only: [:show, :edit, :update, :destroy]
 
 
   def index
+    @adress = Address.all
   end
 
   def show

@@ -17,29 +17,30 @@ ActiveRecord::Schema.define(version: 20160304205927) do
   enable_extension "plpgsql"
 
   create_table "addresses", force: :cascade do |t|
-    t.string   "street"
-    t.string   "city"
-    t.string   "state"
-    t.string   "zip"
+
+    t.string   "street", null: false
+    t.string   "city", null: false
+    t.string   "state", null: false
+    t.string   "zip", null: false
     t.integer  "homes_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "agents", force: :cascade do |t|
-    t.string   "name"
-    t.string   "phone"
-    t.string   "email"
+    t.string   "name", null: false
+    t.string   "phone", null: false
+    t.string   "email", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "homes", force: :cascade do |t|
-    t.integer  "bed"
-    t.integer  "bath"
-    t.integer  "sqft"
-    t.integer  "price"
-    t.boolean  "sold",       null: false
+    t.integer  "bed",  null: false
+    t.integer  "bath", null: false
+    t.integer  "sqft", null: false
+    t.integer  "price", null: false
+    t.boolean  "sold"
     t.boolean  "like"
     t.integer  "agents_id"
     t.datetime "created_at", null: false
