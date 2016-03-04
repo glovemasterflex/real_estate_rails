@@ -1,2 +1,27 @@
-<h1>Homes#show</h1>
-<p>Find me in app/views/homes/show.html.erb</p>
+<h1> <%= @home.name %> <h1>
+<hr />
+
+<%= link_to 'Edit Home', edit_agent_home_path(@agent, @home) %>
+<br />
+ 	
+ 	<label>Number of Bedrooms</label>
+ 	<h4> <%= @home.bed %> </h4>
+ 	<label>Number of Bathrooms</label>
+ 	<h4> <%= @home.bath %> </h4>
+ 	<label>Home many Square Feet does the Home have?</label>
+ 	<h4> <%= @home.sqft %> </h4>
+ 	<label>Home Price</label>
+ 	<h4> <%= @home.price %> </h4>
+ 	<label>Has the Home been Sold?</label>
+ 	<h4> <%= @home.sold %> </h4>
+ 	<label>Do you Like the Home?</label>
+ 	<h4> <%= @home.like %> </h4>
+ 	<br />
+
+ 	<label>Listing Agent</label>
+ 	<h5> <%= @agent.name %> </h4>
+ 	<label>Phone</label>
+ 	<h5> <%= @agent.phone %> </h5>
+ 	<label>Email</label>
+ 	<h5> <%= @agent.email %> </h5>
+ 	
