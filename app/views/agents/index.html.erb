@@ -2,11 +2,7 @@
   <% @agents.each do |agent| %>
     <ul>    
       <li><%= link_to "#{agent.name}", agent_path(agent[:id]) %></li>
-        <ul>
-          <li><%= agent.phone %></li>
-          <li><%= agent.email %></li>
-        </ul>
-      </ul>
+    </ul>
 
     <% end %>
 <br />
