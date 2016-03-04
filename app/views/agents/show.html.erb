@@ -1,4 +1,8 @@
+<h1><%= @agent.name %></h1>
 
-
+<ul>
+  <li><%= @agent.phone %></li>
+  <li><%= @agent.email %></li>
+</ul>
 <%= link_to 'Back To All Agents', agents_path %>
 <%= link_to 'Edit Agent', edit_agent_path(params[:id]) %>
