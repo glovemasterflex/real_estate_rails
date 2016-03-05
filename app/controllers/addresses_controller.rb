@@ -6,20 +6,22 @@ class AddressesController < ApplicationController
 
 
   def index
-    @adress = Address.all
+    @address = @home.address
   end
 
   def show
   end
 
   def new
-    @address = Adress.new
+    @address = Address.new
   end
 
   def create
-    @address = @location.address.new(address_params)
+    @address = Address.new(address_params)
+    @address.home = @home
     if @address.save
-      redirect_to agent_home_address_path(@agent, @home, @address)
+      redirect_to agent_home_addresses_path(@agent, @home, @address)
+    end
   end
 
   def edit
@@ -27,9 +29,10 @@ class AddressesController < ApplicationController
 
   def update
     if @address.update(address_params)
-      redirect_to agent_home_adress_path(@agent, @home, @address)
+      redirect_to agent_home_addresses_path(@agent, @home, @address)
     else
       render :edit
+    end
   end
 
   def destroy
@@ -38,7 +41,7 @@ class AddressesController < ApplicationController
   end
 
   private
-  def adress_params
+  def address_params
     params.require(:address).permit(:street, :city, :state, :zip)
   end
 
@@ -47,11 +50,11 @@ class AddressesController < ApplicationController
   end
 
   def b_home
-    @home = @agent.home.find(params[:home_id])
+    @home = @agent.homes.find(params[:home_id])
   end
 
   def c_address
-    @address = @home.address.find(params[:id])
+    @address = @home.address
   end
 
 end

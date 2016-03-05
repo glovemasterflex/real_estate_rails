@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   resources :agents do
     resources :homes do
-      resources :address
+      resources :addresses
     end
   end
 end

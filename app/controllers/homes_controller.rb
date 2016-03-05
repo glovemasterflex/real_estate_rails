@@ -15,19 +15,20 @@ class HomesController < ApplicationController
 
   def update
   	if @home.update(home_params)
-  		redirect_to agent_home_path(@agent, @home)
+  		redirect_to agent_homes_path(@agent, @home)
   	else
   		render :edit
   	end
   end
 
   def new
+    @home = Home.new
   end
 
   def create
-  	@home = @agent.home.new(home_params)
+  	@home = @agent.homes.new(home_params)
   	if @home.save
-  		redirect_to agent_home_path(@agent)
+  		redirect_to agent_homes_path(@agent)
   	else
   		render :new
   	end

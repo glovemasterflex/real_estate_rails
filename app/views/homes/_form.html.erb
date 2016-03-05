@@ -4,13 +4,13 @@
 	<%= f.text_field :bed, required: true %>
 	<br />
 	<%= f.label :bath, placeholder: '# of Bathrooms' %>
-	<%= f.label :bath, required: true %>
+	<%= f.text_field :bath, required: true %>
 	<br />
 	<%= f.label :sqft, placeholder: 'Home Square Footage' %>
-	<%= f.label :sqft, required: true %>
+	<%= f.text_field :sqft, required: true %>
 	<br />
 	<%= f.label :price, placeholder: 'Home Price' %>
-	<%= f.label :price, required: true %>
+	<%= f.number_field :price, required: true %>
 	<br />
 	<%= f.check_box :sold %>
 	<%= f.label :sold %>

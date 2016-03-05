@@ -7,7 +7,7 @@ class CreateHomes < ActiveRecord::Migration
       t.integer :price
       t.boolean :sold, null: false
       t.boolean :like, null: true
-      t.belongs_to :agents
+      t.belongs_to :agent
 
       t.timestamps null: false
     end
