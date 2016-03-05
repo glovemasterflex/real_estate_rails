@@ -1,5 +1,6 @@
 class HomesController < ApplicationController
-	before_action :agent, :home, only: [:show, :edit, :update, :destroy]
+	before_action :agent
+  before_action :home, only: [:show, :edit, :update, :destroy]
 
   def index
   	@homes = @agent.homes.all
@@ -47,6 +48,6 @@ class HomesController < ApplicationController
   	end
 
   	def home
-  		@agent.homes.find(params[:id])
+  		@home = @agent.homes.find(params[:id])
   	end
 end

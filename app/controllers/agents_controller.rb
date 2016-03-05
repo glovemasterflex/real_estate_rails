@@ -1,5 +1,5 @@
 class AgentsController < ApplicationController
-  
+  # before_action :agent
 
   def index
     @agents = Agent.all
@@ -41,7 +41,7 @@ class AgentsController < ApplicationController
       params.require(:agent).permit(:name, :phone, :email)
     end
 
-    def agent
-      @agent = Agent.find(params[:id])
-    end
+    # def agent
+    #   @agent = Agent.find(params[:id])
+    # end
 end

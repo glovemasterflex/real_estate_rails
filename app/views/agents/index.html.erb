@@ -1,7 +1,9 @@
 <h1>Welcome to Our Real Estate Agency</h1>
   <% @agents.each do |agent| %>
     <ul>    
-      <li><%= link_to "#{agent.name}", agent_path(agent[:id]) %></li>
+      <li><%= link_to "#{agent.name}", agent_path(agent) %></li>
+      
+      <li><%= link_to 'Listings', agent_homes_path(agent) %></li>
     </ul>
 
     <% end %>
