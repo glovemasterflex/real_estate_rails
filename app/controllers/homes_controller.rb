@@ -1,6 +1,6 @@
 class HomesController < ApplicationController
 	before_action :agent
-  before_action :home, only: [:show, :edit, :update, :destroy]
+  before_action :home, only: [:show, :edit, :update, :destroy, :like]
 
   def index
   	@homes = @agent.homes.all
@@ -11,6 +11,10 @@ class HomesController < ApplicationController
   end
 
   def edit
+  end
+
+  def like
+    @like = Like.create(home_id: @home, user_id: current_user)
   end
 
   def update
@@ -41,7 +45,7 @@ class HomesController < ApplicationController
 
   private
   	def home_params
-  		params.require(:home).permit(:bed, :bath, :sqft, :price, :sold, :like)
+  		params.require(:home).permit(:bed, :bath, :sqft, :price, :sold, :like, :name)
   	end
 
   	def agent

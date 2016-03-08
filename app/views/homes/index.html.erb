@@ -2,11 +2,11 @@
   <ul>
   <% @agent.homes.each do |home| %>
         
-      <li><%= link_to 'Listing', agent_homes_path(home) %></li>
+      <li><%= link_to "#{home.name}", agent_home_path(@agent, home) %></li>
       
       <li><%= link_to 'Address', agent_home_addresses_path(@agent, home) %></li>
-    </ul>
 
     <% end %>
+    </ul>
 <br />
 <%= link_to 'Create New Listing', new_agent_home_path(@agent) %>

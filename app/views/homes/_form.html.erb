@@ -1,5 +1,8 @@
 <%= form_for [@agent, @home] do |f| %>
 
+	<%= f.label :name %>
+	<%= f.text_field :name, placeholder: 'Home Name' %>
+	<br />
 	<%= f.label :bed, placeholder: '# of Beds' %>
 	<%= f.text_field :bed, required: true %>
 	<br />

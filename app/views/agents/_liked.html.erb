@@ -1,0 +1,7 @@
+<% @agents.each do |agent| %>
+	<% agent.homes.each do |home| %>
+		<% if home.like %> 
+			<%= link_to "#{home.name}", agent_home_path(agent, home) %>
+		<% end %>
+	<% end %>
+<% end %>

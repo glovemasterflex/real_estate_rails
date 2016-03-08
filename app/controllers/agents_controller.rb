@@ -5,24 +5,8 @@ class AgentsController < ApplicationController
     @agents = Agent.all
   end
 
-  def show
-    @agent = Agent.find(params[:id])
-  end
-
-  def edit
-    @agent = Agent.find(params[:id])
-  end
-
   def new
     @agent = Agent.new
-  end
-
-  def update
-    if @agent.update(agent_params[:id])
-      redirect_to
-    else
-      render :edit
-    end
   end
 
   def create
@@ -33,6 +17,24 @@ class AgentsController < ApplicationController
       render :new
     end
   end
+
+  def show
+    @agent = Agent.find(params[:id])
+  end
+
+  def edit
+    @agent = Agent.find(params[:id])
+  end
+
+  def update
+    @agent = Agent.find(params[:id])
+    if @agent.update(agent_params)
+      redirect_to
+    else
+      render :edit
+    end
+  end
+  
 
 
   private

@@ -9,3 +9,8 @@
     <% end %>
 <br />
 <%= link_to 'Create New Agent', new_agent_path %>
+ <%#= link_to 'Show Listings for all Agents', agent_path %>
+ <%#= link_to 'Show Favorites', ****%>
+<hr />
+<h2>Here are your 'Liked' homes</h2>
+<%= render(partial: 'liked') %>

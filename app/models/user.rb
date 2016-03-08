@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
   has_secure_password
   has_one :account
   after_create :create_account
+  has_many :likes
+  has_many :homes, through: :likes
 
   def create_account
     Account.create(user_id: self.id)

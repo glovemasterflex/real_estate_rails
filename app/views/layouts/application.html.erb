@@ -9,6 +9,11 @@
 <body>
 
 <%= yield %>
-
+<hr />
+<footer>
+	<%= link_to 'Listing Agents', agents_path %> |
+	
+	<%= link_to 'Logout', logout_path %>
+</footer>
 </body>
 </html>
