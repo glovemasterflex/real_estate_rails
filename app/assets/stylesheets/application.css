@@ -13,3 +13,16 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+	background-color: black;
+	color: white;
+}
+
+.inline {
+	display: inline-block;
+}
+
+.footer {
+	float: right;
+}

@@ -1,12 +1,14 @@
 <h1>Listings yo mofo</h1>
-  <ul>
-  <% @agent.homes.each do |home| %>
-        
-      <li><%= link_to "#{home.name}", agent_home_path(@agent, home) %></li>
-      
-      <li><%= link_to 'Address', agent_home_addresses_path(@agent, home) %></li>
+	<% @agent.homes.each do |home| %>
+		<div class="inline">
+		  <ul>
+	        
+	      <li><%= link_to "#{home.name}", agent_home_path(@agent, home) %></li>
+	      
+	      <li><%= link_to 'Address', agent_home_addresses_path(@agent, home) %></li>
 
-    <% end %>
-    </ul>
+		  </ul>
+		</div>
+	<% end %>
 <br />
 <%= link_to 'Create New Listing', new_agent_home_path(@agent) %>

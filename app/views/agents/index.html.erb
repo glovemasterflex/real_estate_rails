@@ -1,16 +1,18 @@
 <h1>Welcome to Our Real Estate Agency</h1>
-  <% @agents.each do |agent| %>
-    <ul>    
-      <li><%= link_to "#{agent.name}", agent_path(agent) %></li>
-      
-      <li><%= link_to 'Listings', agent_homes_path(agent) %></li>
-    </ul>
-
-    <% end %>
+	<% @agents.each do |agent| %>
+		<div class="inline">
+	    <ul>    
+	      <li><%= link_to "#{agent.name}", agent_path(agent) %></li>
+	      
+	      <li><%= link_to 'Listings', agent_homes_path(agent) %></li>
+	    </ul>
+	 	</div>
+	<% end %>
 <br />
 <%= link_to 'Create New Agent', new_agent_path %>
  <%#= link_to 'Show Listings for all Agents', agent_path %>
  <%#= link_to 'Show Favorites', ****%>
 <hr />
 <h2>Here are your 'Liked' homes</h2>
+
 <%= render(partial: 'liked') %>
